@@ -2,7 +2,6 @@ import Listing from "./Listing.js";
 
 const Product = Listing.discriminator('Product',
     new mongoose.Schema({
-
         markedPrice: {
             type: Number,
             required: true,

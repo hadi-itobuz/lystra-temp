@@ -30,7 +30,6 @@ const userSchema = new mongoose.Schema({
     },
     profilePicture: {
         type: String,
-        required: true,
         default: null
     }
 },baseOption)
@@ -44,12 +43,10 @@ const Seller= User.discriminator('Seller', new mongoose.Schema({
     },
     rating:{
         type: Number,
-        required: true,
         default: 0
     },
     ratingCount:{
         type: Number,
-        required: true,
         default: 0
     }
 }));
