@@ -31,23 +31,16 @@ const listingSchema = new mongoose.Schema({
         type: String,
         required: true
     }],
-    image: [{
+    details:[
+        mongoose.Schema({key:String, value: String})//I want an array of key value pair of details like battery: 5000mah, brand: samsung
+    ],
+    images: [{
         type: String,
     }],
-    rating: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    ratingCount: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    address: {
+    address: [{
         type: mongoose.Schema.Types.ObjectId,
         // required: true,
-    }
+    }]
 }, baseOption);
 
 const Listing = mongoose.model("Listing", listingSchema);

@@ -12,6 +12,8 @@ const SecondHand = Listing.discriminator('SecondHand',
         },
         condition: {
             type: String,
+            enum: ['NEW','OLD', 'MINT', 'REFURBISHED',null],//will add more categories
+            default: null,
             required: true,
         },
         listedOn: {

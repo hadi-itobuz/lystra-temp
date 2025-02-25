@@ -2,11 +2,12 @@ import Listing from "./Listing.js";
 
 const Product = Listing.discriminator('Product',
     new mongoose.Schema({
-        markedPrice: {
+        costPrice: {
             type: Number,
             required: true,
+            select: false,//will only be shown to seller not buyer
         },
-        sellingPrice: {
+        markedPrice: {
             type: Number,
             required: true,
         },
@@ -15,7 +16,7 @@ const Product = Listing.discriminator('Product',
             required: true,
             default: 0
         },
-        count: {//Inventory can't order if count=0
+        count: {//Inventory:can't order if count=0
             type: Number,
             required: true,
             default: 0
