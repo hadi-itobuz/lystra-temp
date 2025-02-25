@@ -1,5 +1,5 @@
 import Listing from "./Listing.js";
-
+import mongoose from "mongoose";
 const Product = Listing.discriminator('Product',
     new mongoose.Schema({
         costPrice: {
