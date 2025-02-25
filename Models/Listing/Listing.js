@@ -5,6 +5,7 @@ const baseOption = {
     collection: 'Listing'
 
 };
+const details = new mongoose.Schema({key:String, value: String});
 const listingSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -31,16 +32,11 @@ const listingSchema = new mongoose.Schema({
         type: String,
         required: true
     }],
-    details:[
-        mongoose.Schema({key:String, value: String})//I want an array of key value pair of details like battery: 5000mah, brand: samsung
-    ],
+    details:[details],
     images: [{
         type: String,
     }],
-    address: [{
-        type: mongoose.Schema.Types.ObjectId,
-        // required: true,
-    }]
+    address: [{type:mongoose.Schema.Types.ObjectId}]
 }, baseOption);
 
 const Listing = mongoose.model("Listing", listingSchema);
